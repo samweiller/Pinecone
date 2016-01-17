@@ -10,6 +10,7 @@
 
 import UIKit
 import Parse
+import AVFoundation
 
 class GameViewController: UIViewController {
     
@@ -26,6 +27,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var theActiveWordLabel: UILabel!
+    
+    var audioPlayer:AVAudioPlayer!
     
     // some Global variables
     var teamInControl: Int = 1
@@ -55,12 +58,48 @@ class GameViewController: UIViewController {
     }
     var timer = NSTimer()
 
-    // Grab word from parse and display it
-    @IBAction func newWordButton(sender: AnyObject) {
+//    // Grab word from parse and display it
+//    @IBAction func newWordButton(sender: AnyObject) {
+//        var theChosenWord: String = ""
+//        theActiveWordLabel.hidden = false
+//
+//        var numberOfWords: UInt32 = 208
+//        
+//        let randomNumber = Int(arc4random_uniform(numberOfWords))
+//        print(randomNumber)
+//        
+//        let query2 = PFQuery(className:"WordList")
+//        query2.whereKey("index", equalTo:randomNumber)
+//        
+//        query2.findObjectsInBackgroundWithBlock {
+//            (objects: [PFObject]?, error: NSError?) -> Void in
+//            
+//            if error == nil {
+//                if let objects = objects {
+//                    for object in objects {
+//                        theChosenWord = object["words"] as! String
+//                        print(theChosenWord)
+//                        self.theActiveWordLabel.text = theChosenWord.capitalizedString
+//                    }
+//                }
+//            } else {
+//                // Log details of the failure
+//                print("Error: \(error!) \(error!.userInfo)")
+//            }
+//        }
+//    }
+    
+    @IBOutlet weak var theNewWordButtonOutlet: UIButton!
+    
+    @IBOutlet weak var startTurnButtonOutlet: UIButton!
+    // Begin turn (timer, hide new word button, etc.)
+    
+    @IBAction func startTurnButton(sender: AnyObject) {
         var theChosenWord: String = ""
+        self.theActiveWordLabel.text = ""
         theActiveWordLabel.hidden = false
-
-        var numberOfWords: UInt32 = 208
+        
+        var numberOfWords: UInt32 = 200
         
         let randomNumber = Int(arc4random_uniform(numberOfWords))
         print(randomNumber)
@@ -76,6 +115,9 @@ class GameViewController: UIViewController {
                     for object in objects {
                         theChosenWord = object["words"] as! String
                         print(theChosenWord)
+                        if (theChosenWord == ""){
+                            theChosenWord = "pinecone"
+                        }
                         self.theActiveWordLabel.text = theChosenWord.capitalizedString
                     }
                 }
@@ -84,18 +126,11 @@ class GameViewController: UIViewController {
                 print("Error: \(error!) \(error!.userInfo)")
             }
         }
-    }
-    
-    @IBOutlet weak var theNewWordButtonOutlet: UIButton!
-    
-    @IBOutlet weak var startTurnButtonOutlet: UIButton!
-    // Begin turn (timer, hide new word button, etc.)
-    
-    @IBAction func startTurnButton(sender: AnyObject) {
+        
         timerLabel.hidden = false
         currentPointsLabel.hidden = false
         startTurnButtonOutlet.hidden = true
-        theNewWordButtonOutlet.hidden = true
+//        theNewWordButtonOutlet.hidden = true
 //        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "update", userInfo: nil, repeats: true)
         doneWithTurnButton.hidden = false
         playWithTurnsLeft(remainingTurns)
@@ -162,7 +197,7 @@ class GameViewController: UIViewController {
         theActiveWordLabel.hidden = true
         
         startTurnButtonOutlet.hidden = false
-        theNewWordButtonOutlet.hidden = false
+//        theNewWordButtonOutlet.hidden = false
         
         remainingTurns = 5
         

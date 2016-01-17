@@ -23,6 +23,9 @@
 		C5448A551C48AC480046C07C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5448A4B1C48AC480046C07C /* Security.framework */; };
 		C5448A561C48AC480046C07C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5448A4C1C48AC480046C07C /* StoreKit.framework */; };
 		C5448A571C48AC480046C07C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5448A4D1C48AC480046C07C /* SystemConfiguration.framework */; };
+		C561DA641C4AACF300AD12A7 /* endingBeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C561DA631C4AACF300AD12A7 /* endingBeep.mp3 */; };
+		C561DA661C4C1F3D00AD12A7 /* clock218.png in Resources */ = {isa = PBXBuildFile; fileRef = C561DA651C4C1F3D00AD12A7 /* clock218.png */; };
+		C561DA681C4C213500AD12A7 /* NewUITestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C561DA671C4C213500AD12A7 /* NewUITestController.swift */; };
 		C5DDB52A1C4369F200D1D090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDB5291C4369F200D1D090 /* AppDelegate.swift */; };
 		C5DDB52C1C4369F200D1D090 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDB52B1C4369F200D1D090 /* GameViewController.swift */; };
 		C5DDB52F1C4369F200D1D090 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5DDB52D1C4369F200D1D090 /* Main.storyboard */; };
@@ -68,6 +71,9 @@
 		C5448A4B1C48AC480046C07C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C5448A4C1C48AC480046C07C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C5448A4D1C48AC480046C07C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C561DA631C4AACF300AD12A7 /* endingBeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = endingBeep.mp3; path = ../../Downloads/endingBeep.mp3; sourceTree = "<group>"; };
+		C561DA651C4C1F3D00AD12A7 /* clock218.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clock218.png; path = ../../Downloads/clock218.png; sourceTree = "<group>"; };
+		C561DA671C4C213500AD12A7 /* NewUITestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUITestController.swift; sourceTree = "<group>"; };
 		C5DDB5261C4369F200D1D090 /* pinecone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pinecone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DDB5291C4369F200D1D090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5DDB52B1C4369F200D1D090 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +164,8 @@
 				C5DDB5271C4369F200D1D090 /* Products */,
 				C5448A581C48AC620046C07C /* Frameworks */,
 				C5DDB55A1C43705B00D1D090 /* pineconeImage.png */,
+				C561DA631C4AACF300AD12A7 /* endingBeep.mp3 */,
+				C561DA651C4C1F3D00AD12A7 /* clock218.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,6 +184,7 @@
 			children = (
 				C5DDB5291C4369F200D1D090 /* AppDelegate.swift */,
 				C5DDB52B1C4369F200D1D090 /* GameViewController.swift */,
+				C561DA671C4C213500AD12A7 /* NewUITestController.swift */,
 				C5DDB52D1C4369F200D1D090 /* Main.storyboard */,
 				C5DDB5331C4369F200D1D090 /* Assets.xcassets */,
 				C5DDB5351C4369F200D1D090 /* LaunchScreen.storyboard */,
@@ -308,10 +317,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C561DA661C4C1F3D00AD12A7 /* clock218.png in Resources */,
 				C5DDB55B1C43705B00D1D090 /* pineconeImage.png in Resources */,
 				C5DDB5371C4369F200D1D090 /* LaunchScreen.storyboard in Resources */,
 				C5DDB5341C4369F200D1D090 /* Assets.xcassets in Resources */,
 				C5DDB52F1C4369F200D1D090 /* Main.storyboard in Resources */,
+				C561DA641C4AACF300AD12A7 /* endingBeep.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C561DA681C4C213500AD12A7 /* NewUITestController.swift in Sources */,
 				C5DDB52C1C4369F200D1D090 /* GameViewController.swift in Sources */,
 				C5DDB5321C4369F200D1D090 /* pinecone.xcdatamodeld in Sources */,
 				C5DDB52A1C4369F200D1D090 /* AppDelegate.swift in Sources */,
