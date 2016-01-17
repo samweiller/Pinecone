@@ -23,7 +23,7 @@ class NewUITestController: UIViewController {
         self.teamTwoScoreLabel.clipsToBounds = true;
         
         self.teamOneScoreLabel.layer.borderWidth = 4.0;
-        self.teamOneScoreLabel.layer.borderColor = UIColor.whiteColor()().CGColor
+        self.teamOneScoreLabel.layer.borderColor = UIColor.whiteColor().CGColor
         
 //        self.teamTwoScoreLabel.layer.borderWidth = 4.0;
 //        self.teamTwoScoreLabel.layer.borderColor = UIColor.yellowColor().CGColor

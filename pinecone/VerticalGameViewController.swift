@@ -14,142 +14,143 @@ import AVFoundation
 
 class VerticalGameViewController: UIViewController {
     
-    @IBOutlet weak var doneWithTurnButton: UIButton!
+    // Initialize all Outlets here
     
-    @IBOutlet weak var controlMarkerTeamOne: UIImageView!
-    @IBOutlet weak var controlMarkerTeamTwo: UIImageView!
-    
-    @IBOutlet weak var leftTeamScoreLabel: UILabel!
-    @IBOutlet weak var rightTeamScoreLabel: UILabel!
-    
-    @IBOutlet weak var currentPointsLabel: UILabel!
+    @IBOutlet weak var teamOneScoreLabel: UILabel!
+    @IBOutlet weak var teamTwoScoreLabel: UILabel!
     
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var timerIcon: UIImageView!
     
     @IBOutlet weak var theActiveWordLabel: UILabel!
     
-    var audioPlayer:AVAudioPlayer!
+    @IBOutlet weak var showWordButtonLabel: UIButton!
     
-    // some Global variables
-    var teamInControl: Int = 1
+    @IBOutlet weak var passButtonLabel: UIButton!
+    @IBOutlet weak var playButtonLabel: UIButton!
+    
+    @IBOutlet weak var missedItButtonLabel: UIButton!
+    @IBOutlet weak var gotItButtonLabel: UIButton!
+    
+    @IBOutlet weak var doneWithTurnButtonLabel: UIButton!
+    
+    @IBOutlet weak var remainingTurnsLabel: UILabel!
+    
+    // Initialize all variables and constants here
+    var teamInControl: Int = 2
     var teamOneScore: Int = 0
     var teamTwoScore: Int = 0
     var remainingTurns: Int = 5
     var currentPoints: Int = 0
     var timerMaximum: Int = 30
     var count: Int = 0
+    var audioPlayer:AVAudioPlayer!
+    var timer: NSTimer = NSTimer()
+    var theChosenWord: String = ""
+    var numberOfWords: UInt32 = 200   // This should be dynamic. Get count of VALID words in Parse DB
     
+    // VIEW DID LOAD IS HERE!
     override func viewDidLoad() {
+        // Let's get this shit started.
+        // GOALS: Zero everything out, display buttons that are needed before a turn starts
+        
         super.viewDidLoad()
         
+        changeTeamInControl()
+        
+        timerLabel.hidden = true
+        timerIcon.hidden = true
+        theActiveWordLabel.hidden = true
+        showWordButtonLabel.hidden = false
+        passButtonLabel.hidden = true
+        playButtonLabel.hidden = true
+        missedItButtonLabel.hidden = true
+        gotItButtonLabel.hidden = true
+        doneWithTurnButtonLabel.hidden = true
+        remainingTurnsLabel.hidden = true
+        
         self.theActiveWordLabel.text = ""
-        self.currentPointsLabel.text = ""
         self.timerLabel.text = ""
         
-        activatePineconeOn(teamInControl)
+        self.teamOneScoreLabel.text = String(teamOneScore)
+        self.teamTwoScoreLabel.text = String(teamTwoScore)
         
-        self.leftTeamScoreLabel.text = String(teamOneScore)
-        self.rightTeamScoreLabel.text = String(teamTwoScore)
+        // Round out text boxes
+        self.teamOneScoreLabel.layer.cornerRadius = (self.teamOneScoreLabel.frame.size.width / 2) + 14;
+        self.teamOneScoreLabel.clipsToBounds = true;
+        
+        self.teamTwoScoreLabel.layer.cornerRadius = (self.teamTwoScoreLabel.frame.size.width / 2) + 14;
+        self.teamTwoScoreLabel.clipsToBounds = true;
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    var timer = NSTimer()
-    
-    //    // Grab word from parse and display it
-    //    @IBAction func newWordButton(sender: AnyObject) {
-    //        var theChosenWord: String = ""
-    //        theActiveWordLabel.hidden = false
-    //
-    //        var numberOfWords: UInt32 = 208
-    //
-    //        let randomNumber = Int(arc4random_uniform(numberOfWords))
-    //        print(randomNumber)
-    //
-    //        let query2 = PFQuery(className:"WordList")
-    //        query2.whereKey("index", equalTo:randomNumber)
-    //
-    //        query2.findObjectsInBackgroundWithBlock {
-    //            (objects: [PFObject]?, error: NSError?) -> Void in
-    //
-    //            if error == nil {
-    //                if let objects = objects {
-    //                    for object in objects {
-    //                        theChosenWord = object["words"] as! String
-    //                        print(theChosenWord)
-    //                        self.theActiveWordLabel.text = theChosenWord.capitalizedString
-    //                    }
-    //                }
-    //            } else {
-    //                // Log details of the failure
-    //                print("Error: \(error!) \(error!.userInfo)")
-    //            }
-    //        }
-    //    }
-    
-    @IBOutlet weak var theNewWordButtonOutlet: UIButton!
-    
-    @IBOutlet weak var startTurnButtonOutlet: UIButton!
-    // Begin turn (timer, hide new word button, etc.)
-    
-    @IBAction func startTurnButton(sender: AnyObject) {
-        var theChosenWord: String = ""
+    @IBAction func showWordButton(sender: AnyObject) {
         self.theActiveWordLabel.text = ""
         theActiveWordLabel.hidden = false
         
-        var numberOfWords: UInt32 = 200
+        remainingTurns = 6
         
         let randomNumber = Int(arc4random_uniform(numberOfWords))
-        print(randomNumber)
+        print(randomNumber) // DEBUG LINE
         
         let query2 = PFQuery(className:"WordList")
         query2.whereKey("index", equalTo:randomNumber)
         
         query2.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
-            
             if error == nil {
                 if let objects = objects {
                     for object in objects {
-                        theChosenWord = object["words"] as! String
-                        print(theChosenWord)
-                        if (theChosenWord == ""){
-                            theChosenWord = "pinecone"
+                        self.theChosenWord = object["words"] as! String
+                        print(self.theChosenWord)
+                        if (self.theChosenWord == ""){
+                            self.theChosenWord = "pinecone" // if no word returned, set the word to pinecone
                         }
-                        self.theActiveWordLabel.text = theChosenWord.capitalizedString
+                        self.theActiveWordLabel.text = self.theChosenWord.capitalizedString
                     }
                 }
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
+                self.theChosenWord = "pinecones" // if error, set the word to pinecones
             }
         }
         
-        timerLabel.hidden = false
-        currentPointsLabel.hidden = false
-        startTurnButtonOutlet.hidden = true
-        //        theNewWordButtonOutlet.hidden = true
-        //        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "update", userInfo: nil, repeats: true)
-        doneWithTurnButton.hidden = false
+        showWordButtonLabel.hidden = true
+        playButtonLabel.hidden = false
+        passButtonLabel.hidden = false
+    }
+    
+    @IBAction func playButton(sender: AnyObject) {
         playWithTurnsLeft(remainingTurns)
     }
     
-    @IBOutlet weak var stageInstructionsText: UILabel!
+    @IBAction func passButton(sender: AnyObject) {
+        changeTeamInControl()
+        playWithTurnsLeft(remainingTurns)
+    }
     
-    func playWithTurnsLeft(var remainingTurns: Int){
-        currentPoints = remainingTurns + 1
-        count = timerMaximum // number of seconds per turn
-        
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "update", userInfo: nil, repeats: true)
-        
-        doneWithTurnButton.hidden = false
-        
-        self.currentPointsLabel.text = String(currentPoints)
-        self.timerLabel.text = String(count)
-        
-        timer.fire()
+    func playWithTurnsLeft(remainingTurns: Int){
+        timerLabel.hidden = false
+        doneWithTurnButtonLabel.hidden = false
+        if (remainingTurns > 0){
+            currentPoints = remainingTurns + 1
+            count = timerMaximum // number of seconds per turn
+            
+            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "update", userInfo: nil, repeats: true)
+            
+            doneWithTurnButtonLabel.hidden = false
+            
+            if (remainingTurns > 1){
+                self.remainingTurnsLabel.text = "\(remainingTurns) turns left."
+            } else if (remainingTurns == 1) {
+                self.remainingTurnsLabel.text = "Last turn! Make it count."
+            }
+            self.timerLabel.text = String(count)
+            
+            timer.fire()
+        } else if (remainingTurns == 0) {
+            gotItButtonAction(1)
+        }
     }
     
     func update() {
@@ -162,9 +163,6 @@ class VerticalGameViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var gotItButtonOutlet: UIButton!
-    @IBOutlet weak var missedItButtonOutlet: UIButton!
-    
     @IBAction func doneWithTurnButtonAction(sender: AnyObject) {
         count = 0
         timer.invalidate()
@@ -173,9 +171,9 @@ class VerticalGameViewController: UIViewController {
     
     func endOfTheTurn() {
         timer.invalidate()
-        doneWithTurnButton.hidden = true
-        gotItButtonOutlet.hidden = false
-        missedItButtonOutlet.hidden = false
+        doneWithTurnButtonLabel.hidden = true
+        gotItButtonLabel.hidden = false
+        missedItButtonLabel.hidden = false
         self.timerLabel.text = "0"
     }
     
@@ -183,61 +181,45 @@ class VerticalGameViewController: UIViewController {
         // add points
         if (teamInControl == 1){
             teamOneScore += currentPoints
-            self.leftTeamScoreLabel.text = String(teamOneScore)
+            self.teamOneScoreLabel.text = String(teamOneScore)
         } else if (teamInControl == 2){
             teamTwoScore += currentPoints
-            self.rightTeamScoreLabel.text = String(teamTwoScore)
+            self.teamTwoScoreLabel.text = String(teamTwoScore)
         }
         
         // start over
         timerLabel.hidden = true
-        currentPointsLabel.hidden = true
-        gotItButtonOutlet.hidden = true
-        missedItButtonOutlet.hidden = true
+        gotItButtonLabel.hidden = true
+        missedItButtonLabel.hidden = true
         theActiveWordLabel.hidden = true
         
-        startTurnButtonOutlet.hidden = false
-        //        theNewWordButtonOutlet.hidden = false
-        
-        remainingTurns = 5
-        
-        if (teamInControl == 1){
-            teamInControl = 2
-        } else if ( teamInControl == 2) {
-            teamInControl = 1
-        }
-        
-        activatePineconeOn(teamInControl)
+        changeTeamInControl()
     }
     
     @IBAction func missedItButtonAction(sender: AnyObject) {
-        // reduce point value
         remainingTurns--
         
         // change control
-        // OH GOD THIS IS DONE TERRIBLY! IT SHOULD BE 1 & 0 OR 1 & -1! HAAAAALP!
-        if (teamInControl == 1){
-            teamInControl = 2
-        } else if ( teamInControl == 2) {
-            teamInControl = 1
-        }
-        
-        activatePineconeOn(teamInControl)
+        changeTeamInControl()
         
         // start again
-        gotItButtonOutlet.hidden = true
-        missedItButtonOutlet.hidden = true
+        gotItButtonLabel.hidden = true
+        missedItButtonLabel.hidden = true
         
         playWithTurnsLeft(remainingTurns)
     }
     
-    func activatePineconeOn(teamInControl: Int){
+    func changeTeamInControl(){
         if (teamInControl == 1){
-            controlMarkerTeamOne.hidden = false
-            controlMarkerTeamTwo.hidden = true
-        } else if (teamInControl == 2) {
-            controlMarkerTeamOne.hidden = true
-            controlMarkerTeamTwo.hidden = false
+            teamInControl = 2
+            self.teamOneScoreLabel.layer.borderWidth = 0.0
+            self.teamTwoScoreLabel.layer.borderWidth = 4.0
+            self.teamTwoScoreLabel.layer.borderColor = UIColor.whiteColor().CGColor
+        } else if ( teamInControl == 2) {
+            teamInControl = 1
+            self.teamTwoScoreLabel.layer.borderWidth = 0.0
+            self.teamOneScoreLabel.layer.borderWidth = 4.0
+            self.teamOneScoreLabel.layer.borderColor = UIColor.whiteColor().CGColor
         }
     }
 }

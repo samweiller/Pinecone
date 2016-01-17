@@ -512,6 +512,10 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="87" y="259" width="226" height="71"/>
                                 </variation>
+                                <connections>
+                                    <action selector="showWordButton:" destination="gbf-Uq-0tY" eventType="touchUpInside" id="Qil-jx-jba"/>
+                                    <action selector="startTurnButton:" destination="gbf-Uq-0tY" eventType="touchUpInside" id="w1R-V9-EPS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXn-FF-eew">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -522,6 +526,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="374" width="138" height="49"/>
                                 </variation>
+                                <connections>
+                                    <action selector="passButton:" destination="gbf-Uq-0tY" eventType="touchUpInside" id="BlL-tq-aBh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwY-vU-4w4">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -532,26 +539,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="242" y="371" width="138" height="54"/>
                                 </variation>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfq-U1-pD8">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Missed It">
-                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="19" y="414" width="140" height="54"/>
-                                </variation>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6v-75-1Om">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Got It!">
-                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="242" y="414" width="138" height="54"/>
-                                </variation>
+                                <connections>
+                                    <action selector="playButton:" destination="gbf-Uq-0tY" eventType="touchUpInside" id="Ix9-TU-uvn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPZ-H4-rld">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -562,7 +552,45 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="131" y="371" width="138" height="54"/>
                                 </variation>
+                                <connections>
+                                    <action selector="doneWithTurnButtonAction:" destination="gbf-Uq-0tY" eventType="touchUpInside" id="MhM-PR-4dQ"/>
+                                </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfq-U1-pD8">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Missed It">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="19" y="414" width="140" height="54"/>
+                                </variation>
+                                <connections>
+                                    <action selector="missedItButtonAction:" destination="gbf-Uq-0tY" eventType="touchUpInside" id="cON-k4-z0t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6v-75-1Om">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Got It!">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="242" y="414" width="138" height="54"/>
+                                </variation>
+                                <connections>
+                                    <action selector="gotItButtonAction:" destination="gbf-Uq-0tY" eventType="touchUpInside" id="639-A5-1QV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7F8-Or-Qvo">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="539" width="360" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.30980392156862746" green="0.40392156862745099" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -599,9 +627,10 @@
                                 <exclude reference="PEt-DL-HAe"/>
                                 <exclude reference="gXn-FF-eew"/>
                                 <exclude reference="JwY-vU-4w4"/>
+                                <exclude reference="iPZ-H4-rld"/>
                                 <exclude reference="bfq-U1-pD8"/>
                                 <exclude reference="A6v-75-1Om"/>
-                                <exclude reference="iPZ-H4-rld"/>
+                                <exclude reference="7F8-Or-Qvo"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Czy-0Q-33T"/>
@@ -628,9 +657,10 @@
                                 <include reference="PEt-DL-HAe"/>
                                 <include reference="gXn-FF-eew"/>
                                 <include reference="JwY-vU-4w4"/>
+                                <include reference="iPZ-H4-rld"/>
                                 <include reference="bfq-U1-pD8"/>
                                 <include reference="A6v-75-1Om"/>
-                                <include reference="iPZ-H4-rld"/>
+                                <include reference="7F8-Or-Qvo"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Czy-0Q-33T"/>
@@ -648,8 +678,18 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="teamOneScoreLabel" destination="EzC-s0-5pf" id="Mbc-zv-EFy"/>
-                        <outlet property="teamTwoScoreLabel" destination="9Qv-AE-lUM" id="DJx-HN-cPq"/>
+                        <outlet property="doneWithTurnButtonLabel" destination="iPZ-H4-rld" id="0N9-Sj-maD"/>
+                        <outlet property="gotItButtonLabel" destination="A6v-75-1Om" id="8so-Wf-lWF"/>
+                        <outlet property="missedItButtonLabel" destination="bfq-U1-pD8" id="Hml-cZ-Jh4"/>
+                        <outlet property="passButtonLabel" destination="gXn-FF-eew" id="PMj-fH-rnI"/>
+                        <outlet property="playButtonLabel" destination="JwY-vU-4w4" id="bYf-Pi-Jzu"/>
+                        <outlet property="remainingTurnsLabel" destination="7F8-Or-Qvo" id="h0p-0L-7Q1"/>
+                        <outlet property="showWordButtonLabel" destination="PEt-DL-HAe" id="yGd-O2-aDH"/>
+                        <outlet property="teamOneScoreLabel" destination="EzC-s0-5pf" id="cW5-pq-j35"/>
+                        <outlet property="teamTwoScoreLabel" destination="9Qv-AE-lUM" id="8FB-F1-Oxm"/>
+                        <outlet property="theActiveWordLabel" destination="Olh-eS-eSS" id="L60-AJ-Et2"/>
+                        <outlet property="timerIcon" destination="5y4-5G-TYv" id="Zjq-PA-OQ6"/>
+                        <outlet property="timerLabel" destination="bdr-nU-KcY" id="nD4-dE-0gZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waW-mk-TMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
