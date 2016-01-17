@@ -378,6 +378,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Nin-HU-vdj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zOj-id-Ogq" customClass="GameC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzC-s0-5pf">
@@ -467,7 +468,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pineconeImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="lbK-hd-gTz">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pineconeImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="lbK-hd-gTz">
                                 <rect key="frame" x="12" y="370" width="58" height="66"/>
                                 <color key="tintColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -478,78 +479,36 @@
                                     <rect key="frame" x="110" y="106" width="23" height="24"/>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olh-eS-eSS">
-                                <rect key="frame" x="91" y="255" width="418" height="89"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="3lh-tt-9pZ"/>
-                                    <constraint firstAttribute="width" constant="418" id="4ZE-mk-xrW"/>
-                                    <constraint firstAttribute="width" secondItem="Olh-eS-eSS" secondAttribute="height" multiplier="400:73" id="Akk-OG-Jbd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="42"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="3lh-tt-9pZ"/>
-                                        <exclude reference="Akk-OG-Jbd"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="-1" y="257" width="400" height="73.5"/>
-                                    <mask key="constraints">
-                                        <include reference="3lh-tt-9pZ"/>
-                                        <exclude reference="4ZE-mk-xrW"/>
-                                        <include reference="Akk-OG-Jbd"/>
-                                    </mask>
-                                </variation>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEt-DL-HAe">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <state key="normal" title="Show Word">
-                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="87" y="259" width="226" height="71"/>
-                                </variation>
                                 <connections>
                                     <action selector="showWordButton:" destination="gbf-Uq-0tY" eventType="touchUpInside" id="Qil-jx-jba"/>
-                                    <action selector="startTurnButton:" destination="gbf-Uq-0tY" eventType="touchUpInside" id="w1R-V9-EPS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXn-FF-eew">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="Pass">
-                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="374" width="138" height="49"/>
+                                    <rect key="frame" x="21" y="407" width="138" height="49"/>
                                 </variation>
                                 <connections>
                                     <action selector="passButton:" destination="gbf-Uq-0tY" eventType="touchUpInside" id="BlL-tq-aBh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwY-vU-4w4">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Play">
-                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="242" y="371" width="138" height="54"/>
-                                </variation>
-                                <connections>
-                                    <action selector="playButton:" destination="gbf-Uq-0tY" eventType="touchUpInside" id="Ix9-TU-uvn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPZ-H4-rld">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="Done">
-                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="131" y="371" width="138" height="54"/>
                                 </variation>
                                 <connections>
@@ -560,26 +519,13 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="Missed It">
-                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="19" y="414" width="140" height="54"/>
+                                    <rect key="frame" x="20" y="447" width="140" height="54"/>
                                 </variation>
                                 <connections>
                                     <action selector="missedItButtonAction:" destination="gbf-Uq-0tY" eventType="touchUpInside" id="cON-k4-z0t"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6v-75-1Om">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Got It!">
-                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="242" y="414" width="138" height="54"/>
-                                </variation>
-                                <connections>
-                                    <action selector="gotItButtonAction:" destination="gbf-Uq-0tY" eventType="touchUpInside" id="639-A5-1QV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7F8-Or-Qvo">
@@ -587,28 +533,76 @@
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="20" y="539" width="360" height="21"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olh-eS-eSS">
+                                <rect key="frame" x="91" y="255" width="418" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="418" id="4ZE-mk-xrW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="42"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="227" width="400" height="73.5"/>
+                                    <mask key="constraints">
+                                        <exclude reference="4ZE-mk-xrW"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwY-vU-4w4">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="242" y="407" width="138" height="54"/>
+                                </variation>
+                                <connections>
+                                    <action selector="playButton:" destination="gbf-Uq-0tY" eventType="touchUpInside" id="Ix9-TU-uvn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6v-75-1Om">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Got It!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="242" y="450" width="138" height="54"/>
+                                </variation>
+                                <connections>
+                                    <action selector="gotItButtonAction:" destination="gbf-Uq-0tY" eventType="touchUpInside" id="639-A5-1QV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.30980392156862746" green="0.40392156862745099" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="iPZ-H4-rld" firstAttribute="top" secondItem="UEd-Xo-hBW" secondAttribute="bottom" constant="351" id="4bz-lL-nYK"/>
+                            <constraint firstItem="PEt-DL-HAe" firstAttribute="centerY" secondItem="zOj-id-Ogq" secondAttribute="centerY" id="57A-0y-qkZ"/>
+                            <constraint firstItem="PEt-DL-HAe" firstAttribute="centerX" secondItem="zOj-id-Ogq" secondAttribute="centerX" id="AMF-6U-D6w"/>
                             <constraint firstItem="bdr-nU-KcY" firstAttribute="centerX" secondItem="zOj-id-Ogq" secondAttribute="centerX" id="AXf-D7-P4d"/>
+                            <constraint firstItem="Nin-HU-vdj" firstAttribute="top" secondItem="7F8-Or-Qvo" secondAttribute="bottom" constant="40" id="B3M-LJ-NVt"/>
+                            <constraint firstItem="7F8-Or-Qvo" firstAttribute="centerX" secondItem="zOj-id-Ogq" secondAttribute="centerX" id="BSV-IY-R9R"/>
                             <constraint firstItem="EzC-s0-5pf" firstAttribute="top" secondItem="UEd-Xo-hBW" secondAttribute="bottom" id="Czy-0Q-33T">
                                 <variation key="widthClass=compact" constant="40"/>
                             </constraint>
-                            <constraint firstItem="Olh-eS-eSS" firstAttribute="centerY" secondItem="zOj-id-Ogq" secondAttribute="centerY" id="G75-ds-PUO"/>
-                            <constraint firstItem="Olh-eS-eSS" firstAttribute="centerX" secondItem="zOj-id-Ogq" secondAttribute="centerX" id="M7c-rj-Rdf"/>
+                            <constraint firstItem="Olh-eS-eSS" firstAttribute="centerX" secondItem="zOj-id-Ogq" secondAttribute="centerX" id="Ieb-fO-Q6U"/>
                             <constraint firstItem="lbK-hd-gTz" firstAttribute="width" secondItem="lbK-hd-gTz" secondAttribute="height" multiplier="29:33" id="Nnu-iR-V6G"/>
                             <constraint firstItem="5y4-5G-TYv" firstAttribute="top" secondItem="bdr-nU-KcY" secondAttribute="bottom" constant="-18" id="R0W-aQ-4B1"/>
                             <constraint firstItem="EzC-s0-5pf" firstAttribute="leading" secondItem="zOj-id-Ogq" secondAttribute="leadingMargin" constant="51" id="Td4-Aj-M9K">
                                 <variation key="widthClass=compact" constant="36"/>
                             </constraint>
                             <constraint firstItem="5y4-5G-TYv" firstAttribute="leading" secondItem="bdr-nU-KcY" secondAttribute="trailing" constant="-12" id="Wfd-mG-QbR"/>
+                            <constraint firstItem="iPZ-H4-rld" firstAttribute="centerX" secondItem="zOj-id-Ogq" secondAttribute="centerX" id="geS-LA-pZQ"/>
+                            <constraint firstItem="Olh-eS-eSS" firstAttribute="width" secondItem="zOj-id-Ogq" secondAttribute="width" id="lwK-tb-bM5"/>
                             <constraint firstItem="9Qv-AE-lUM" firstAttribute="top" secondItem="UEd-Xo-hBW" secondAttribute="bottom" id="nzs-EP-b0N">
                                 <variation key="widthClass=compact" constant="40"/>
                             </constraint>
+                            <constraint firstItem="Olh-eS-eSS" firstAttribute="top" secondItem="UEd-Xo-hBW" secondAttribute="bottom" constant="207" id="olx-M6-eoA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9Qv-AE-lUM" secondAttribute="trailing" constant="52" id="rld-hg-Dn8">
                                 <variation key="widthClass=compact" constant="37"/>
                             </constraint>
@@ -623,14 +617,14 @@
                                 <exclude reference="bdr-nU-KcY"/>
                                 <exclude reference="5y4-5G-TYv"/>
                                 <exclude reference="lbK-hd-gTz"/>
-                                <exclude reference="Olh-eS-eSS"/>
                                 <exclude reference="PEt-DL-HAe"/>
                                 <exclude reference="gXn-FF-eew"/>
-                                <exclude reference="JwY-vU-4w4"/>
                                 <exclude reference="iPZ-H4-rld"/>
                                 <exclude reference="bfq-U1-pD8"/>
-                                <exclude reference="A6v-75-1Om"/>
                                 <exclude reference="7F8-Or-Qvo"/>
+                                <exclude reference="Olh-eS-eSS"/>
+                                <exclude reference="JwY-vU-4w4"/>
+                                <exclude reference="A6v-75-1Om"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Czy-0Q-33T"/>
@@ -638,12 +632,19 @@
                                 <exclude reference="Nnu-iR-V6G"/>
                                 <exclude reference="AXf-D7-P4d"/>
                                 <exclude reference="yjJ-Fv-ImA"/>
+                                <exclude reference="Ieb-fO-Q6U"/>
+                                <exclude reference="lwK-tb-bM5"/>
+                                <exclude reference="olx-M6-eoA"/>
                                 <exclude reference="R0W-aQ-4B1"/>
                                 <exclude reference="Wfd-mG-QbR"/>
-                                <exclude reference="G75-ds-PUO"/>
-                                <exclude reference="M7c-rj-Rdf"/>
                                 <exclude reference="nzs-EP-b0N"/>
                                 <exclude reference="rld-hg-Dn8"/>
+                                <exclude reference="57A-0y-qkZ"/>
+                                <exclude reference="AMF-6U-D6w"/>
+                                <exclude reference="4bz-lL-nYK"/>
+                                <exclude reference="geS-LA-pZQ"/>
+                                <exclude reference="BSV-IY-R9R"/>
+                                <exclude reference="B3M-LJ-NVt"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -653,14 +654,14 @@
                                 <include reference="bdr-nU-KcY"/>
                                 <include reference="5y4-5G-TYv"/>
                                 <include reference="lbK-hd-gTz"/>
-                                <include reference="Olh-eS-eSS"/>
                                 <include reference="PEt-DL-HAe"/>
                                 <include reference="gXn-FF-eew"/>
-                                <include reference="JwY-vU-4w4"/>
                                 <include reference="iPZ-H4-rld"/>
                                 <include reference="bfq-U1-pD8"/>
-                                <include reference="A6v-75-1Om"/>
                                 <include reference="7F8-Or-Qvo"/>
+                                <include reference="Olh-eS-eSS"/>
+                                <include reference="JwY-vU-4w4"/>
+                                <include reference="A6v-75-1Om"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Czy-0Q-33T"/>
@@ -668,12 +669,19 @@
                                 <include reference="Nnu-iR-V6G"/>
                                 <include reference="AXf-D7-P4d"/>
                                 <include reference="yjJ-Fv-ImA"/>
+                                <include reference="Ieb-fO-Q6U"/>
+                                <include reference="lwK-tb-bM5"/>
+                                <include reference="olx-M6-eoA"/>
                                 <include reference="R0W-aQ-4B1"/>
                                 <include reference="Wfd-mG-QbR"/>
-                                <include reference="G75-ds-PUO"/>
-                                <include reference="M7c-rj-Rdf"/>
                                 <include reference="nzs-EP-b0N"/>
                                 <include reference="rld-hg-Dn8"/>
+                                <include reference="57A-0y-qkZ"/>
+                                <include reference="AMF-6U-D6w"/>
+                                <include reference="4bz-lL-nYK"/>
+                                <include reference="geS-LA-pZQ"/>
+                                <include reference="BSV-IY-R9R"/>
+                                <include reference="B3M-LJ-NVt"/>
                             </mask>
                         </variation>
                     </view>

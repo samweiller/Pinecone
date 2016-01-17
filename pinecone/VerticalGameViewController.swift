@@ -87,7 +87,7 @@ class VerticalGameViewController: UIViewController {
         self.theActiveWordLabel.text = ""
         theActiveWordLabel.hidden = false
         
-        remainingTurns = 6
+        remainingTurns = 5
         
         let randomNumber = Int(arc4random_uniform(numberOfWords))
         print(randomNumber) // DEBUG LINE
@@ -132,7 +132,12 @@ class VerticalGameViewController: UIViewController {
     func playWithTurnsLeft(remainingTurns: Int){
         timerLabel.hidden = false
         doneWithTurnButtonLabel.hidden = false
-        if (remainingTurns > 0){
+        playButtonLabel.hidden = true
+        passButtonLabel.hidden = true
+        remainingTurnsLabel.hidden = false
+
+        
+        if (remainingTurns >= 0){
             currentPoints = remainingTurns + 1
             count = timerMaximum // number of seconds per turn
             
@@ -143,12 +148,16 @@ class VerticalGameViewController: UIViewController {
             if (remainingTurns > 1){
                 self.remainingTurnsLabel.text = "\(remainingTurns) turns left."
             } else if (remainingTurns == 1) {
+                self.remainingTurnsLabel.text = "1 turn left."
+            } else if (remainingTurns == 0) {
                 self.remainingTurnsLabel.text = "Last turn! Make it count."
             }
             self.timerLabel.text = String(count)
             
             timer.fire()
-        } else if (remainingTurns == 0) {
+        } else {
+            currentPoints = 0
+            changeTeamInControl()
             gotItButtonAction(1)
         }
     }
@@ -188,10 +197,13 @@ class VerticalGameViewController: UIViewController {
         }
         
         // start over
+        doneWithTurnButtonLabel.hidden = true
+        showWordButtonLabel.hidden = false
         timerLabel.hidden = true
         gotItButtonLabel.hidden = true
         missedItButtonLabel.hidden = true
         theActiveWordLabel.hidden = true
+        remainingTurnsLabel.hidden = true
         
         changeTeamInControl()
     }
