@@ -369,10 +369,10 @@
             </objects>
             <point key="canvasLocation" x="305" y="429"/>
         </scene>
-        <!--NewUI Test Controller-->
+        <!--Vertical Game View Controller-->
         <scene sceneID="QBH-h7-qx8">
             <objects>
-                <viewController id="gbf-Uq-0tY" customClass="NewUITestController" customModule="pinecone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gbf-Uq-0tY" customClass="VerticalGameViewController" customModule="pinecone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UEd-Xo-hBW"/>
                         <viewControllerLayoutGuide type="bottom" id="Nin-HU-vdj"/>
@@ -503,6 +503,66 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEt-DL-HAe">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <state key="normal" title="Show Word">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="87" y="259" width="226" height="71"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXn-FF-eew">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Pass">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="374" width="138" height="49"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwY-vU-4w4">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="242" y="371" width="138" height="54"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfq-U1-pD8">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Missed It">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="19" y="414" width="140" height="54"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6v-75-1Om">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Got It!">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="242" y="414" width="138" height="54"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPZ-H4-rld">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="131" y="371" width="138" height="54"/>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.30980392156862746" green="0.40392156862745099" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -536,6 +596,12 @@
                                 <exclude reference="5y4-5G-TYv"/>
                                 <exclude reference="lbK-hd-gTz"/>
                                 <exclude reference="Olh-eS-eSS"/>
+                                <exclude reference="PEt-DL-HAe"/>
+                                <exclude reference="gXn-FF-eew"/>
+                                <exclude reference="JwY-vU-4w4"/>
+                                <exclude reference="bfq-U1-pD8"/>
+                                <exclude reference="A6v-75-1Om"/>
+                                <exclude reference="iPZ-H4-rld"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Czy-0Q-33T"/>
@@ -559,6 +625,12 @@
                                 <include reference="5y4-5G-TYv"/>
                                 <include reference="lbK-hd-gTz"/>
                                 <include reference="Olh-eS-eSS"/>
+                                <include reference="PEt-DL-HAe"/>
+                                <include reference="gXn-FF-eew"/>
+                                <include reference="JwY-vU-4w4"/>
+                                <include reference="bfq-U1-pD8"/>
+                                <include reference="A6v-75-1Om"/>
+                                <include reference="iPZ-H4-rld"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Czy-0Q-33T"/>

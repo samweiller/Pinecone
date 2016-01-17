@@ -26,6 +26,7 @@
 		C561DA641C4AACF300AD12A7 /* endingBeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C561DA631C4AACF300AD12A7 /* endingBeep.mp3 */; };
 		C561DA661C4C1F3D00AD12A7 /* clock218.png in Resources */ = {isa = PBXBuildFile; fileRef = C561DA651C4C1F3D00AD12A7 /* clock218.png */; };
 		C561DA681C4C213500AD12A7 /* NewUITestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C561DA671C4C213500AD12A7 /* NewUITestController.swift */; };
+		C561DA6A1C4C4CB200AD12A7 /* VerticalGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C561DA691C4C4CB200AD12A7 /* VerticalGameViewController.swift */; };
 		C5DDB52A1C4369F200D1D090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDB5291C4369F200D1D090 /* AppDelegate.swift */; };
 		C5DDB52C1C4369F200D1D090 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDB52B1C4369F200D1D090 /* GameViewController.swift */; };
 		C5DDB52F1C4369F200D1D090 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5DDB52D1C4369F200D1D090 /* Main.storyboard */; };
@@ -74,6 +75,7 @@
 		C561DA631C4AACF300AD12A7 /* endingBeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = endingBeep.mp3; path = ../../Downloads/endingBeep.mp3; sourceTree = "<group>"; };
 		C561DA651C4C1F3D00AD12A7 /* clock218.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clock218.png; path = ../../Downloads/clock218.png; sourceTree = "<group>"; };
 		C561DA671C4C213500AD12A7 /* NewUITestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUITestController.swift; sourceTree = "<group>"; };
+		C561DA691C4C4CB200AD12A7 /* VerticalGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalGameViewController.swift; sourceTree = "<group>"; };
 		C5DDB5261C4369F200D1D090 /* pinecone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pinecone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DDB5291C4369F200D1D090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5DDB52B1C4369F200D1D090 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			children = (
 				C5DDB5291C4369F200D1D090 /* AppDelegate.swift */,
 				C5DDB52B1C4369F200D1D090 /* GameViewController.swift */,
+				C561DA691C4C4CB200AD12A7 /* VerticalGameViewController.swift */,
 				C561DA671C4C213500AD12A7 /* NewUITestController.swift */,
 				C5DDB52D1C4369F200D1D090 /* Main.storyboard */,
 				C5DDB5331C4369F200D1D090 /* Assets.xcassets */,
@@ -350,6 +353,7 @@
 				C561DA681C4C213500AD12A7 /* NewUITestController.swift in Sources */,
 				C5DDB52C1C4369F200D1D090 /* GameViewController.swift in Sources */,
 				C5DDB5321C4369F200D1D090 /* pinecone.xcdatamodeld in Sources */,
+				C561DA6A1C4C4CB200AD12A7 /* VerticalGameViewController.swift in Sources */,
 				C5DDB52A1C4369F200D1D090 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
