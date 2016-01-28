@@ -27,6 +27,8 @@
 		C561DA661C4C1F3D00AD12A7 /* clock218.png in Resources */ = {isa = PBXBuildFile; fileRef = C561DA651C4C1F3D00AD12A7 /* clock218.png */; };
 		C561DA681C4C213500AD12A7 /* NewUITestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C561DA671C4C213500AD12A7 /* NewUITestController.swift */; };
 		C561DA6A1C4C4CB200AD12A7 /* VerticalGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C561DA691C4C4CB200AD12A7 /* VerticalGameViewController.swift */; };
+		C5DCD6E81C504421006E14DC /* Check.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DCD6E71C504421006E14DC /* Check.png */; };
+		C5DCD6EA1C5044C5006E14DC /* Check Pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DCD6E91C5044C5006E14DC /* Check Pressed.png */; };
 		C5DDB52A1C4369F200D1D090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDB5291C4369F200D1D090 /* AppDelegate.swift */; };
 		C5DDB52C1C4369F200D1D090 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDB52B1C4369F200D1D090 /* GameViewController.swift */; };
 		C5DDB52F1C4369F200D1D090 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5DDB52D1C4369F200D1D090 /* Main.storyboard */; };
@@ -76,6 +78,8 @@
 		C561DA651C4C1F3D00AD12A7 /* clock218.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clock218.png; path = ../../Downloads/clock218.png; sourceTree = "<group>"; };
 		C561DA671C4C213500AD12A7 /* NewUITestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUITestController.swift; sourceTree = "<group>"; };
 		C561DA691C4C4CB200AD12A7 /* VerticalGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalGameViewController.swift; sourceTree = "<group>"; };
+		C5DCD6E71C504421006E14DC /* Check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Check.png; sourceTree = "<group>"; };
+		C5DCD6E91C5044C5006E14DC /* Check Pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Check Pressed.png"; sourceTree = "<group>"; };
 		C5DDB5261C4369F200D1D090 /* pinecone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pinecone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DDB5291C4369F200D1D090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5DDB52B1C4369F200D1D090 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +159,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C5DCD6E61C504406006E14DC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C5DDB55A1C43705B00D1D090 /* pineconeImage.png */,
+				C561DA631C4AACF300AD12A7 /* endingBeep.mp3 */,
+				C561DA651C4C1F3D00AD12A7 /* clock218.png */,
+				C5DCD6E91C5044C5006E14DC /* Check Pressed.png */,
+				C5DCD6E71C504421006E14DC /* Check.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		C5DDB51D1C4369F200D1D090 = {
 			isa = PBXGroup;
 			children = (
@@ -165,9 +181,7 @@
 				C5DDB54B1C4369F200D1D090 /* pineconeUITests */,
 				C5DDB5271C4369F200D1D090 /* Products */,
 				C5448A581C48AC620046C07C /* Frameworks */,
-				C5DDB55A1C43705B00D1D090 /* pineconeImage.png */,
-				C561DA631C4AACF300AD12A7 /* endingBeep.mp3 */,
-				C561DA651C4C1F3D00AD12A7 /* clock218.png */,
+				C5DCD6E61C504406006E14DC /* Assets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -320,11 +334,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5DCD6EA1C5044C5006E14DC /* Check Pressed.png in Resources */,
 				C561DA661C4C1F3D00AD12A7 /* clock218.png in Resources */,
 				C5DDB55B1C43705B00D1D090 /* pineconeImage.png in Resources */,
 				C5DDB5371C4369F200D1D090 /* LaunchScreen.storyboard in Resources */,
 				C5DDB5341C4369F200D1D090 /* Assets.xcassets in Resources */,
 				C5DDB52F1C4369F200D1D090 /* Main.storyboard in Resources */,
+				C5DCD6E81C504421006E14DC /* Check.png in Resources */,
 				C561DA641C4AACF300AD12A7 /* endingBeep.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
